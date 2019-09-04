@@ -47,5 +47,5 @@ use the following code snippet
     \textbf{Names goes here}
     \end{center}
   \end{minipage} \\
-end{frame}
+\end{frame}
 ```
