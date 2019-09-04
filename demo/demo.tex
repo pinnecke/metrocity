@@ -1,0 +1,60 @@
+\documentclass{beamer}
+
+% Use the metrocity theme
+\usetheme{metrocity} 
+
+\title{The Metrocity Beamer Template}
+\date{\today}
+\author{Marcus Pinnecke}
+\institute{Metrocity Theme Headquarter}
+
+\begin{document}
+
+  \begin{frame}
+    \maketitle
+  \end{frame}
+
+  \begin{frame}
+    The \alert{Metrocity Beamer Template} is the unofficial theme for the Database and Software Engineering Group of the University of Magdeburg.
+  \end{frame}
+
+  \begin{frame}{Inline Mathmode}
+    A matrix $A$ is called normal, if $AA^*=A^*\mskip-2muA$.
+  \end{frame}
+  
+  \begingroup
+	\setbeamertemplate{footline}{}
+	\setbeamercolor{background}{}
+	\setbeamercolor{background canvas}{bg=blue}
+	\begin{frame}
+	\begin{tikzpicture}[remember picture,overlay]
+	\draw [color=blue,ultra thick, fill] ($(current page.north east)$) rectangle  ($(current page.north east)+(-5cm,-2cm)$) ;
+	\end{tikzpicture}
+	\center\Large\textcolor{white}{Part II}
+	\end{frame}
+  \endgroup
+
+  \begin{frame}{Theorem Environments}
+    \begin{theorem}[Hello]
+      Hello, World!
+    \end{theorem}
+    \begin{proof}
+      Proved by contradiction.
+    \end{proof}
+  \end{frame}
+
+  \begin{frame}{Lists}
+    \begin{enumerate}
+      \item Hello
+      \item There
+    \end{enumerate}
+    \begin{itemize}
+      \item Hello
+      \item There
+      \begin{itemize}
+        \item Subitem
+      \end{itemize}
+    \end{itemize}
+  \end{frame}
+
+\end{document}

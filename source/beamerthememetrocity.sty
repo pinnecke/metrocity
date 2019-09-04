@@ -1,0 +1,145 @@
+%
+%  This is the (unofficial) LaTex beamer template 'metrocity' of the Database and 
+%  Software Engineering Group, University of Magdeburg, Germany. 
+%  This template base on https://github.com/zlliang/beamer-fudan.
+%
+%  Copyright 2019 Marcus Pinnecke
+%  https://github.com/pinnecke/metrocity
+%
+%  Permission is hereby granted, free of charge, to any person obtaining a copy of 
+%  this software and associated documentation files (the "Software"), to deal in 
+%  the Software without restriction, including without limitation the rights to 
+%  use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies 
+%  of the Software, and to permit persons to whom the Software is furnished to do 
+%  so, subject to the following conditions:
+%
+%  The above copyright notice and this permission notice shall be included in all 
+%  copies or substantial portions of the Software.
+%
+%  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+%  INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+%  PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+%  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
+%  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+%  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+%
+
+\mode<presentation>
+
+% ------------------------------------------------------------------------------------
+%
+% required packages
+%
+% ------------------------------------------------------------------------------------
+
+\usepackage{lastpage, graphicx, tikz, setspace}
+\usetikzlibrary{positioning,calc}
+\usefonttheme{professionalfonts}
+
+% ------------------------------------------------------------------------------------
+%
+% definitions
+%
+% ------------------------------------------------------------------------------------
+
+% color definitions according to cooperate design of the University of Magdeburg
+% see http://www.cd.ovgu.de/Fakult%C3%A4ten/Informatik.html
+
+\definecolor{blue}{RGB}{0,104,180}
+\definecolor{gray}{RGB}{77,77,77}
+\definecolor{black}{RGB}{0,0,0}
+
+% ------------------------------------------------------------------------------------
+%
+% some primary tweaks
+%
+% ------------------------------------------------------------------------------------
+
+\setbeamertemplate{navigation symbols}{}
+\usecolortheme[RGB={31,91,166}]{structure}
+
+\setbeamerfont{frametitle}{size={\fontsize{16}{20}}}
+\setbeamercolor{frametitle}{fg=black}
+
+\setbeamerfont{alerted text}{series=\bfseries}
+\setbeamercolor{alerted text}{fg=black}
+
+% ------------------------------------------------------------------------------------
+%
+% title page
+%
+% ------------------------------------------------------------------------------------
+\setbeamertemplate{title page}{
+  
+  \setbeamertemplate{footline}{}
+
+  \vskip4em
+  \hskip-1.5em
+  
+  \begin{spacing}{1.2}
+    {\usebeamerfont{title}\Large{\inserttitle}}
+  \end{spacing}
+  
+  \vskip1em
+
+  \footnotesize{
+    \textcolor{gray}{\insertauthor
+    \vfill
+    \vskip9.3em
+    \begin{spacing}{1.0}
+      \tiny\insertinstitute, \insertdate
+    \end{spacing}}
+  }
+
+  \vskip-12em
+  \hskip19.9em
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (90.5,100) {\includegraphics[width=0.4\textwidth]{metrocity/logo-eyecatch.png}};
+  \end{tikzpicture}
+  
+}
+
+% ------------------------------------------------------------------------------------
+%
+% regular frames
+%
+% ------------------------------------------------------------------------------------
+
+% add some spacing to the frame title
+\addtobeamertemplate{frametitle}{\vspace*{0.7em}}{\vspace*{1.0em}}
+
+% add the universites logo to the right top of the frame
+\setbeamertemplate{background}{ 
+
+  \begin{tikzpicture}
+	\node[anchor=south west,inner sep=10] (image) at (9.5,0) {\includegraphics[width=0.24\textwidth]{metrocity/logo-titlepage.pdf}};
+    \begin{scope}[x=\paperwidth,y=50]
+        \draw[color=blue,ultra thick, fill] (0,0.99) rectangle (1,1);
+    \end{scope}
+  \end{tikzpicture}
+  
+}
+
+% customize the footer
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[ht=3em,dp=1em,left]{}
+    \hspace{1em}
+    \thepage\hspace{0.2em}/\hspace{0.2em}\pageref{LastPage}
+    \ifnum\thepage>1
+      \hspace{1em}
+      {\usebeamercolor[fg]{title}\insertshorttitle}
+      \hspace{1em}
+      \insertshortauthor
+    \fi
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[wd=0.9925\paperwidth,right]{}
+  \usebeamertemplate***{navigation symbols}%
+  \end{beamercolorbox}
+}
+
+% some small tweaks on visuals
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{itemize subitem}[square]
+\setbeamertemplate{blocks}[framed]
+
+\mode<all>
