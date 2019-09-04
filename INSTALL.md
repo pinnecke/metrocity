@@ -4,7 +4,7 @@ To install this theme, the theme definition file `source/beamerthememetrocity.st
 
 To get the latest stable version for your project, navigate to your projects root, and type
 ```
-wget https://github.com/pinnecke/metrocity/master.zip
+wget https://github.com/pinnecke/metrocity/archive/master.zip
 unzip master.zip
 rm master.zip
 cp metrocity-master/source/* .
