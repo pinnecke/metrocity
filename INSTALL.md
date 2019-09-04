@@ -7,7 +7,7 @@ To get the latest stable version for your project, navigate to your projects roo
 wget https://github.com/pinnecke/metrocity/archive/master.zip
 unzip master.zip
 rm master.zip
-cp metrocity-master/source/* .
+cp -r metrocity-master/source/* .
 rm -rf metrocity-master
 ```
 Afterwards, `beamerthememetrocity.sty` should be stored in and a new directory called `metrocity`, which holds image assets, should be added to your projects root directory. Then, open your TeX presentation, and add `\usetheme{metrocity}`.
