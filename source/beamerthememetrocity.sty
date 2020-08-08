@@ -73,34 +73,30 @@
 %
 % ------------------------------------------------------------------------------------
 \setbeamertemplate{title page}{
-  
   \setbeamertemplate{footline}{}
-
-  \vskip4em
-  \hskip-1.5em
-  
-  \begin{spacing}{1.2}
-    {\usebeamerfont{title}\Large{\inserttitle}}\\
-    \textcolor{gray}{\insertsubtitle}
-  \end{spacing}
-  
   \vskip1em
-
-  \footnotesize{
-    \textcolor{gray}{\insertauthor
-    \vfill
-    \vskip9.3em
-    \begin{spacing}{1.0}
-      \tiny\insertinstitute, \insertdate
-    \end{spacing}}
-  }
-
-  \vskip-12em
-  \hskip19.9em
-  \begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (90.5,100) {\includegraphics[width=0.4\textwidth]{metrocity/logo-eyecatch.png}};
-  \end{tikzpicture}
-  
+  \begin{columns}[t]
+    \hspace*{1.5em}%
+    \begin{column}{0.6\textwidth}
+      \begin{spacing}{1.5}
+        {\usebeamerfont{title}\Large{\inserttitle}}\\
+        \textcolor{gray}{\insertsubtitle}
+      \end{spacing}
+      \footnotesize{
+        \textcolor{gray}{\insertauthor
+        \vfill
+        \vskip4em
+        \begin{spacing}{1.0}
+          \tiny\insertinstitute, \insertdate
+        \end{spacing}}
+      }
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{figure}%
+        \includegraphics[height=\textheight]{metrocity/logo-eyecatch.png}\hspace*{2.0em}%
+      \end{figure}%
+    \end{column}
+  \end{columns}
 }
 
 % ------------------------------------------------------------------------------------
@@ -113,15 +109,11 @@
 \addtobeamertemplate{frametitle}{\vspace*{0.7em}}{\vspace*{1.0em}}
 
 % add the universites logo to the right top of the frame
-\setbeamertemplate{background}{ 
+\setbeamertemplate{headline}{
+  \color{blue} \rule{\textwidth}{1mm}
 
-  \begin{tikzpicture}
-	\node[anchor=south west,inner sep=10] (image) at (9.5,0) {\includegraphics[width=0.24\textwidth]{metrocity/logo-titlepage.pdf}};
-    \begin{scope}[x=\paperwidth,y=50]
-        \draw[color=blue,ultra thick, fill] (0,0.99) rectangle (1,1);
-    \end{scope}
-  \end{tikzpicture}
-  
+  \vspace*{0.5cm}
+  \hfill\includegraphics[width=0.24\textwidth]{metrocity/logo-titlepage.pdf}\hspace*{0.4cm}%
 }
 
 % customize the footer
